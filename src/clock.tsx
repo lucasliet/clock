@@ -4,7 +4,8 @@ import { getCurrentTime } from './service/getTime'
 import './clock.scss';
 
 export function Clock() {
-  const [time, setTime] = useState<string>('')
+  const [time, setTime] = useState('')
+  const [isFrameEnabled, setIsFrameEnabled] = useState(false)
 
   useEffect(() => {
     const interval = setInterval(async () => {
@@ -15,8 +16,10 @@ export function Clock() {
   }, [time])
 
   return (
-    <main>
-      <h1>{`${time}`}</h1>
+    <main onClick={() => setIsFrameEnabled(!isFrameEnabled)}>
+      <div className={isFrameEnabled ? 'frame' : ''}>
+        <h1>{`${time}`}</h1>
+      </div>
     </main>
   )
 }

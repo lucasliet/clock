@@ -3,15 +3,32 @@
   src: url(assets/E1234-p7pER.ttf) format('truetype');
 }
 
+$frame-color: #111;
+$frame-border-color: #143;
+$framed-hour-color: #F00;
+$standard-hour-color: #eee;
+
 main {
   display: flex;
   height: 100vh;
   justify-content: center;
   align-items: center;
 
+  .frame {
+    background: $frame-color;
+    border: solid 1.5rem $frame-border-color;
+    border-radius: 12px;
+    padding: 2rem;
+
+    h1 {
+      color: $framed-hour-color;
+    }
+  }
+
   h1 {
+    padding-top: 2vw;
     font-family: 'clock', 'Courier New', Courier, monospace;
     font-size: 10vw;
-    color: #ddd;
+    color: $standard-hour-color;
   }
 }
