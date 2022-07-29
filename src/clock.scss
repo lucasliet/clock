@@ -1,13 +1,17 @@
+@font-face {
+  font-family: clock;
+  src: url(assets/E1234-p7pER.ttf) format('truetype');
+}
+
 main {
   display: flex;
   height: 100vh;
   justify-content: center;
   align-items: center;
-  background: #134;
 
   h1 {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 10rem;
+    font-family: 'clock', 'Courier New', Courier, monospace;
+    font-size: 10vw;
     color: #ddd;
   }
 }
