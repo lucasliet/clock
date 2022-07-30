@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'preact/hooks'
-import { getCurrentTime } from './service/getTime'
+import { getCurrentTime } from '../../service/getTime'
 import { Moment } from 'moment-timezone';
 
 import './clock.scss';

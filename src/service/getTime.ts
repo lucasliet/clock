@@ -9,7 +9,10 @@ export async function getCurrentTime(time?: Moment) {
   const { data: { datetime } } =
     await axios.get<{ datetime: string }>(
       `http://worldtimeapi.org/api/timezone/${TIMEZONE}`
-    ).catch(_ => ({ data: { datetime: moment().tz(TIMEZONE).toISOString() } }));
+    ).catch(e => {
+      console.error('Unable to fetch time from api, fallback to system clock', e)
+      return { data: { datetime: moment().tz(TIMEZONE).toISOString() } }
+    });
 
   return moment(datetime);
 }

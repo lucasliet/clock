@@ -1,5 +1,5 @@
 import { render } from 'preact'
-import { Clock } from './clock'
+import { Clock } from './pages/Clock'
 
 import './main.css'
 
