@@ -1,3 +1,7 @@
+:root {
+  --background: #134
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -9,5 +13,5 @@
 }
 
 body {
-  background: #134;
+  background: var(--background);
 }

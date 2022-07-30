@@ -1,5 +1,5 @@
 @font-face {
-  font-family: clock;
+  font-family: Digital Clock;
   src: url(../../assets/E1234-p7pER.ttf) format('truetype');
 }
 
@@ -27,7 +27,7 @@ main {
 
   h1 {
     padding-top: 2vw;
-    font-family: 'clock', 'Courier New', Courier, monospace;
+    font-family: Digital Clock, 'Courier New', Courier, monospace;
     font-size: 10vw;
     color: $standard-hour-color;
   }
