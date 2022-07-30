@@ -1,34 +1,56 @@
+@import '../../theme/colors.scss';
+
 @font-face {
-  font-family: Digital Clock;
+  font-family: 'Digital Clock';
   src: url(../../assets/E1234-p7pER.ttf) format('truetype');
 }
 
-$frame-color: #111;
-$frame-border-color: #143;
-$framed-hour-color: #F00;
-$standard-hour-color: #eee;
+$color-brightness: 2;
+$root-vw: 1vw;
 
 main {
   display: flex;
-  height: 100vh;
+  flex-direction: column;
+  flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
+  min-height: 100vh;
 
   .frame {
-    background: $frame-color;
-    border: solid 1.8vw $frame-border-color;
-    border-radius: 1vw;
-    padding: 2vw;
+    background: map-get($colors, 'frame');
+    border: solid $root-vw * 1.8 map-get($colors, 'frame-border');
+    border-radius: $root-vw;
+    padding: $root-vw * 2;
 
     h1 {
-      color: $framed-hour-color;
+      color: map-get($colors, 'framed-hour');
+    }
+
+    &:hover {
+      background-color: darken($color: map-get($colors, 'frame'), $amount: $color-brightness);
+      border-color: darken($color: map-get($colors, 'frame-border'), $amount: $color-brightness);
+
+      h1 {
+        color: lighten($color: map-get($colors, 'framed-hour'), $amount: $color-brightness)
+      }
     }
   }
-
+  
   h1 {
-    padding-top: 2vw;
-    font-family: Digital Clock, 'Courier New', Courier, monospace;
-    font-size: 10vw;
-    color: $standard-hour-color;
+    padding-top: $root-vw * 2;
+    font-family: 'Digital Clock', 'Courier New', Courier, monospace;
+    font-size: $root-vw * 10;
+    color: map-get($colors, 'standard-hour');
+  }
+
+  .title {
+    height: 0;
+    padding: 0;
+    position: relative;
+    top: $root-vw * -15;
+    font-family: sans-serif;
+    font-size: $root-vw * 6;
+    text-align: center;
+    color: lighten($color: map-get($colors, 'background'), $amount: 2) !important;
   }
 }

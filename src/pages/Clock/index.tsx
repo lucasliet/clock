@@ -19,6 +19,7 @@ export function Clock() {
   return (
     <main onClick={() => setIsFrameEnabled(!isFrameEnabled)}>
       <div className={isFrameEnabled ? 'frame' : ''}>
+        <h1 className='title'>Clock</h1>
         <h1>{time?.format('HH:mm:ss') ?? '80085'}</h1>
       </div>
     </main>

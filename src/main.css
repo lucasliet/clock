@@ -1,7 +1,3 @@
-:root {
-  --background: #134
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -12,6 +8,6 @@
   background: transparent;
 }
 
-body {
+body > #app {
   background: var(--background);
 }
