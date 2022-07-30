@@ -16,9 +16,9 @@ main {
 
   .frame {
     background: $frame-color;
-    border: solid 1.5rem $frame-border-color;
-    border-radius: 12px;
-    padding: 2rem;
+    border: solid 1.8vw $frame-border-color;
+    border-radius: 1vw;
+    padding: 2vw;
 
     h1 {
       color: $framed-hour-color;
